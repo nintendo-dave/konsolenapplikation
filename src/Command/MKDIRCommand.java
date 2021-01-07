@@ -2,8 +2,6 @@ package Command;
 
 import Writer.IOutputWriter;
 
-import java.util.ArrayList;
-
 public class MKDIRCommand extends Command{
 
     //--- Variables
@@ -18,7 +16,10 @@ public class MKDIRCommand extends Command{
     @Override
     protected void execute(IOutputWriter outputWriter) {
         if(alreadyExists(filename)){
-
+            outputWriter.printLine("Ein Unterverzeichnis oder eine Datei mit dem Namen " +
+                    "\"Desktop\" existiert bereits.");
+        } else{
+            outputWriter.printLine("");
         }
 
     }
