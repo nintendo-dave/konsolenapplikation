@@ -1,6 +1,7 @@
 package Parser;
 
 import Command.Command;
+import Writer.IOutputWriter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ public class CommandParser {
     public static Command parseCommand(String userInput){
         return new Command() {
             @Override
-            protected void execute() {
+            protected void execute(IOutputWriter outputWriter) {
 
             }
         };
