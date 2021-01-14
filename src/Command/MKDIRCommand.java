@@ -2,6 +2,7 @@ package Command;
 
 import Writer.IOutputWriter;
 
+//Authors: Luca v.S., David B.
 public class MKDIRCommand extends Command{
 
     //--- Variables
@@ -25,7 +26,7 @@ public class MKDIRCommand extends Command{
     }
 
     private boolean alreadyExists(String filename){
-        //TODO: Loop through folder and return true, if already exists
+        //TODO: Loop through folder and return true, if folder already exists
         return true;
     }
 
