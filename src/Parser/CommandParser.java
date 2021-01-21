@@ -12,11 +12,9 @@ public class CommandParser {
     }
 
     public static Command parseCommand(String userInput){
-        return new Command() {
-            @Override
-            protected void execute(IOutputWriter outputWriter) {
-
-            }
-        };
+        userInput = userInput.trim();
+        String[] splittetInput = userInput.split("[ ]{1}");
+        System.out.println(splittetInput[0]);
+        return null;
     }
 }
