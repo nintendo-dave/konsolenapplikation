@@ -2,20 +2,21 @@ package Command;
 
 import Writer.IOutputWriter;
 
+//Authors: Luca v.S., David B.
 public class MKDIRCommand extends Command{
 
     //--- Variables
-    String filename;
+    String folder;
 
     //--- Constructor
     public MKDIRCommand(){
-        filename = parameters.get(0);
+        folder = parameters.get(0);
     }
 
     //--- Methods
     @Override
     protected void execute(IOutputWriter outputWriter) {
-        if(alreadyExists(filename)){
+        if(alreadyExists(folder)){
             outputWriter.printLine("Ein Unterverzeichnis oder eine Datei mit dem Namen " +
                     "\"Desktop\" existiert bereits.");
         } else{
@@ -25,7 +26,7 @@ public class MKDIRCommand extends Command{
     }
 
     private boolean alreadyExists(String filename){
-        //TODO: Loop through folder and return true, if already exists
+        //TODO: Loop through folder and return true, if folder already exists
         return true;
     }
 
