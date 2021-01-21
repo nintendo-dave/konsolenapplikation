@@ -8,7 +8,8 @@ public abstract class Command {
     protected List<String> parameters;
 
     protected abstract void execute(IOutputWriter outputWriter);
-    private void setParameters(List<String> parameters){
 
+    private void setParameters(List<String> parameters){
+        this.parameters = parameters;
     }
 }

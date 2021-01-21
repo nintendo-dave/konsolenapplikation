@@ -2,10 +2,9 @@ package Command;
 
 import Writer.IOutputWriter;
 
-public class VERCommand extends Command {
+public class CDCommand extends Command {
     @Override
     protected void execute(IOutputWriter outputWriter) {
 
     }
-
 }
