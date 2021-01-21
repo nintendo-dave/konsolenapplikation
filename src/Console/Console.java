@@ -5,6 +5,7 @@ import Configurator.IConfigurator;
 import Invoker.CommandInvoker;
 import Writer.ConsoleOutputWriter;
 
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class Console {
@@ -18,7 +19,4 @@ public class Console {
         commandInvoker.executeCommand(userInput);
     }
 
-    public void processInput(){
-
-    }
 }
