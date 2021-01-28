@@ -1,12 +1,20 @@
 package Command;
 
-import Filesystem.Drive;
 import Writer.IOutputWriter;
 
 public class DIRCommand extends Command {
 
-    @Override
-    public void execute(IOutputWriter outputWriter, Drive drive) {
+    private String directoryName;
 
+    @Override
+    protected void execute(IOutputWriter outputWriter) {
+
+    }
+
+    // check if directory exist
+    public boolean doesDirectoryExists(String directoryName) {
+
+
+        return false;
     }
 }
