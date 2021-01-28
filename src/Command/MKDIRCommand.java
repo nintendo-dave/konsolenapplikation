@@ -23,7 +23,7 @@ public class MKDIRCommand extends Command{
 
     //--- Methods
     @Override
-    protected void execute(IOutputWriter outputWriter,Drive drive) {
+    public void execute(IOutputWriter outputWriter,Drive drive) {
 
         this.outputWriter = outputWriter;
 
