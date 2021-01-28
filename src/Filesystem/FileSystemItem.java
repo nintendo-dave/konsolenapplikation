@@ -5,7 +5,23 @@ public class FileSystemItem {
     String name;
     String path;
 
-    //Getter & Setter
+    //--- Constructors
+    public FileSystemItem(){}
+    public FileSystemItem(String name, String path){
+        this.name = name;
+        this.path = path;
+    }
+
+    //--- Getter & Setter
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setParentDirectory(Directory parentDirectory) {
+        this.parentDirectory = parentDirectory;
+    }
+    public void setPath(String path) {
+        this.path = path;
+    }
     public Directory getParentDirectory() {
         return parentDirectory;
     }
@@ -15,18 +31,5 @@ public class FileSystemItem {
     public String getPath() {
         return path;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setParentDirectory(Directory parentDirectory) {
-        this.parentDirectory = parentDirectory;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-
 
 }
