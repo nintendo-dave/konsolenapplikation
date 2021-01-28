@@ -11,10 +11,6 @@ public class Drive {
     String prompt;
     List<FileSystemItem> fileSystemItems;
 
-    private void setCurrentDirectory(){
-
-    }
-
     private void restore(){
 
     }
@@ -24,8 +20,12 @@ public class Drive {
     }
 
     //Getter & Setter
-
     public Directory getCurrentDirectory() {
         return currentDirectory;
     }
+
+    public void setCurrentDirectory(Directory directory){
+
+    }
+
 }

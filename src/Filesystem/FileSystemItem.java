@@ -15,4 +15,18 @@ public class FileSystemItem {
     public String getPath() {
         return path;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setParentDirectory(Directory parentDirectory) {
+        this.parentDirectory = parentDirectory;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+
 }
