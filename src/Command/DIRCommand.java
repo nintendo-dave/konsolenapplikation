@@ -15,7 +15,9 @@ public class DIRCommand extends Command {
             outputWriter.printLine("Dieses Verzeichnis Existiert nicht");
         } else {
             Directory directory = drive.getCurrentDirectory();
-            directory.getFileSystemLists();
+            for (int i = 0; i <= directory.getFileSystemLists().size(); i++) {
+                outputWriter.printLine(directory.getFileSystemLists().get(i));
+        }
         }
     }
 
