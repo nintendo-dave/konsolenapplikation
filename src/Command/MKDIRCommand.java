@@ -7,6 +7,8 @@ import Filesystem.FileSystemItem;
 import Invoker.CommandInvoker;
 import Writer.IOutputWriter;
 
+import java.nio.file.FileSystem;
+
 //Authors: Luca v.S., David B.
 public class MKDIRCommand extends Command{
 
@@ -41,9 +43,8 @@ public class MKDIRCommand extends Command{
     }
 
     private void createDirectory(Directory currentDirectory){
-        //Create File
-
-        //Add to directory
+        FileSystemItem newDirectory = new FileSystemItem();
+        newDirectory.setName(directoryName);
 
     }
 
