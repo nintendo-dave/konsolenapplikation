@@ -2,6 +2,7 @@ package Command;
 
 import Configurator.Configurator;
 import Console.Console;
+import Filesystem.Directory;
 import Filesystem.Drive;
 import Invoker.CommandInvoker;
 import Writer.ConsoleOutputWriterTest;
