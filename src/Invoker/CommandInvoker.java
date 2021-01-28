@@ -19,19 +19,9 @@ public class CommandInvoker {
     }
 
     public void executeCommand(String userInput){
-        String commandName = userInput.split(" ")[0];
-        String commandParameters = "";
-        for(int i = 1; i < userInput.split(" ").length; i++){
-            if(i != userInput.split(" ").length - 1) {
-                commandParameters += userInput.split(" ")[i] + " ";
-            }
-            else{
-                commandParameters += userInput.split(" ")[i];
-            }
-        }
-        String command = CommandParser.parseCommand(commandName);
+        String command = CommandParser.parseCommand(userInput);
         Command cmd = CommandFactory.getCommand(command);
-        cmd.setParameters(CommandParser.parseCommandParameters(commandParameters));
+        cmd.setParameters(CommandParser.parseCommandParameters(userInput));
         cmd.execute(new ConsoleOutputWriter(), Console.getDrive());
     }
 
