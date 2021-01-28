@@ -24,7 +24,7 @@ public class Drive {
         return currentDirectory;
     }
 
-    private void setCurrentDirectory(Directory directory){
+    public void setCurrentDirectory(Directory directory){
 
     }
 
