@@ -8,13 +8,14 @@ import java.util.List;
 
 public class CommandParser {
     public static List<String> parseCommandParameters(String parameters){
-       return new ArrayList<String>();
+        List<String> commandParameters = new ArrayList<>();
+        for(int i = 1; i < parameters.split(" ").length; i++){
+            commandParameters.add(parameters.split(" ")[i]);
+        }
+        return commandParameters;
     }
 
     public static String parseCommand(String userInput){
-        userInput = userInput.trim();
-        String[] splittetInput = userInput.split("[ ]{1}");
-        System.out.println(splittetInput[0]);
-        return null;
+        return userInput.split(" ")[0];
     }
 }
