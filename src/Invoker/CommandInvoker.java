@@ -10,7 +10,7 @@ import java.util.Dictionary;
 import java.util.List;
 
 public class CommandInvoker {
-    Dictionary<String, Command> commands;
+    List<String> commands;
     ConsoleOutputWriter outputWriter;
     public CommandInvoker(IOutputWriter outputWriter) {
         this.outputWriter = (ConsoleOutputWriter) outputWriter;
@@ -28,8 +28,8 @@ public class CommandInvoker {
                 commandParameters += userInput.split(" ")[i];
             }
         }
-        Command command = CommandParser.parseCommand(commandName);
-        CommandFactory.getCommand(command);
+        String command = CommandParser.parseCommand(commandName);
+        CommandFactory.getCommand(commandName);
         List<String> parameters = CommandParser.parseCommandParameters(commandParameters);
     }
 

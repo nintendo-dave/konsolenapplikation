@@ -11,7 +11,7 @@ public class CommandParser {
        return new ArrayList<String>();
     }
 
-    public static Command parseCommand(String userInput){
+    public static String parseCommand(String userInput){
         userInput = userInput.trim();
         String[] splittetInput = userInput.split("[ ]{1}");
         System.out.println(splittetInput[0]);
