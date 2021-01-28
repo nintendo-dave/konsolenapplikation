@@ -1,7 +1,7 @@
 package Factory;
 
 import Command.Command;
-import Command.ExitCommand;
+import Command.EXITCommand;
 import Command.*;
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -9,7 +9,7 @@ import java.util.Hashtable;
 public class CommandFactory {
     static public Dictionary<String, Command> getCommands(){
         Hashtable<String, Command> allCommands = new Hashtable<String, Command>();
-        allCommands.put("exit", new ExitCommand());
+        allCommands.put("exit", new EXITCommand());
         allCommands.put("mkdir", new MKDIRCommand());
         allCommands.put("ver", new VERCommand());
         allCommands.put("dir", new DIRCommand());
