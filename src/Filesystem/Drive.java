@@ -22,4 +22,10 @@ public class Drive {
     private void save(){
 
     }
+
+    //Getter & Setter
+
+    public Directory getCurrentDirectory() {
+        return currentDirectory;
+    }
 }
