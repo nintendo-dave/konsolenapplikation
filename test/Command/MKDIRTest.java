@@ -12,6 +12,7 @@ public class MKDIRTest {
 		Console console = new Console(new Configurator());
 		//Create Drive
 		Drive drive = new Drive();
+		//Create OutputWriter
 
 	}
 }
