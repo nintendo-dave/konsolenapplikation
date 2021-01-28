@@ -1,5 +1,7 @@
 package Command;
 
+import Configurator.Configurator;
+import Console.Console;
 import Filesystem.Directory;
 import Filesystem.Drive;
 import Writer.ConsoleOutputWriterTest;
@@ -18,7 +20,6 @@ public class MKDIRTest {
 
 	//--- Test Methods
 	private void prepEnvironment(){
-
 		//Create OutputWriter
 		writer = new ConsoleOutputWriterTest();
 
@@ -34,6 +35,10 @@ public class MKDIRTest {
 		//finish initializing drive
 		drive.setRootDirectory(rootDir);
 		drive.setCurrentDirectory(dir);
+
+		//create Console
+		Console console = new Console(new Configurator());
+		console.start();
 	}
 
 	@Test
@@ -46,10 +51,9 @@ public class MKDIRTest {
 		//create command
 		MKDIRCommand cmd = new MKDIRCommand();
 		cmd.execute(writer, drive);
-		ArrayList params = new ArrayList();
-		params.add("");
-		cmd.setParameters(new ArrayList<>());
-
+		ArrayList<String> params = new ArrayList<>();
+		params.add("f");
+		cmd.setParameters(params);
 
 	}
 }

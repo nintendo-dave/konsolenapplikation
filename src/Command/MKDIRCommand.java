@@ -27,7 +27,7 @@ public class MKDIRCommand extends Command{
 
         if(alreadyExists(directoryName ,drive.getCurrentDirectory())){
             outputWriter.printLine("Ein Unterverzeichnis oder eine Datei mit dem Namen " +
-                    "\"Desktop\" existiert bereits.");
+                    "\""+directoryName+"\" existiert bereits.");
         } else{
             //TODO: CommandInvoker muss später durch den echten ersetzt werden
             CommandInvoker temp_commandInvoker = new CommandInvoker(outputWriter);
