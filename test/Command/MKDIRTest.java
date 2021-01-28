@@ -4,6 +4,7 @@ import Configurator.Configurator;
 import Console.Console;
 import Filesystem.Directory;
 import Filesystem.Drive;
+import Invoker.CommandInvoker;
 import Writer.ConsoleOutputWriterTest;
 import org.junit.Test;
 
@@ -25,10 +26,12 @@ public class MKDIRTest {
 		Directory dir = new Directory("bob", "C:\\sys");
 		dir.setPath(rootDir.getPath());
 
-		//continue initializing drive
+		//finish initializing drive
 		drive.setRootDirectory(rootDir);
 		drive.setCurrentDirectory(dir);
 
+		//Create Invoker
+		CommandInvoker invoker = new CommandInvoker(writer);
 
 	}
 }
