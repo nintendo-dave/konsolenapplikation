@@ -2,7 +2,7 @@ package Writer;
 
 import org.junit.Test;
 
-public class ConsoleOutputWriterTest {
+public class ConsoleOutputWriterTest implements IOutputWriter{
 
 	//--- Variables
 	private String output;
