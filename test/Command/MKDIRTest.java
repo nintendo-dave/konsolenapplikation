@@ -3,6 +3,7 @@ package Command;
 import Configurator.Configurator;
 import Console.Console;
 import Filesystem.Drive;
+import Writer.ConsoleOutputWriterTest;
 import org.junit.Test;
 
 public class MKDIRTest {
@@ -12,7 +13,8 @@ public class MKDIRTest {
 		Console console = new Console(new Configurator());
 		//Create Drive
 		Drive drive = new Drive();
-		//Create OutputWriter
 
+		//Create OutputWriter
+		ConsoleOutputWriterTest writer = new ConsoleOutputWriterTest();
 	}
 }

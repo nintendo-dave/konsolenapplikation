@@ -23,7 +23,8 @@ public class Drive {
     public Directory getCurrentDirectory() {
         return currentDirectory;
     }
-    private void setCurrentDirectory(){
+
+    private void setCurrentDirectory(Directory directory){
 
     }
 
