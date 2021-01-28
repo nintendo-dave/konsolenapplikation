@@ -7,8 +7,6 @@ import Filesystem.FileSystemItem;
 import Invoker.CommandInvoker;
 import Writer.IOutputWriter;
 
-import java.nio.file.FileSystem;
-
 //Authors: Luca v.S., David B.
 public class MKDIRCommand extends Command{
 
