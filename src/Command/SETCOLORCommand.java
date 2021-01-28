@@ -1,5 +1,6 @@
 package Command;
 
+import Filesystem.Drive;
 import Writer.IOutputWriter;
 
 //Authors: Luca v.S., David B.
@@ -15,7 +16,7 @@ public class SETCOLORCommand extends Command{
 
     //--- Methods
     @Override
-    protected void execute(IOutputWriter outputWriter) {
+    public void execute(IOutputWriter outputWriter, Drive drive) {
 
     }
 }

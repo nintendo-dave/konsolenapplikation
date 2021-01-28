@@ -1,5 +1,6 @@
 package Command;
 
+import Filesystem.Drive;
 import Writer.IOutputWriter;
 
 public class VERCommand extends Command {
@@ -7,7 +8,8 @@ public class VERCommand extends Command {
     String version = "Alpha 0.1";
 
     @Override
-    protected void execute(IOutputWriter outputWriter) {
+    public void execute(IOutputWriter outputWriter, Drive drive) {
         outputWriter.printLine(version);
     }
+
 }

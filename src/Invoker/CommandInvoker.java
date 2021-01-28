@@ -1,6 +1,7 @@
 package Invoker;
 
 import Command.Command;
+import Console.Console;
 import Factory.CommandFactory;
 import Parser.CommandParser;
 import Writer.ConsoleOutputWriter;
@@ -29,8 +30,9 @@ public class CommandInvoker {
             }
         }
         String command = CommandParser.parseCommand(commandName);
-        CommandFactory.getCommand(commandName);
-        List<String> parameters = CommandParser.parseCommandParameters(commandParameters);
+        Command cmd = CommandFactory.getCommand(command);
+        cmd.setParameters(CommandParser.parseCommandParameters(commandParameters));
+        cmd.execute(new ConsoleOutputWriter(), Console.getDrive());
     }
 
     public void addCommand(){
