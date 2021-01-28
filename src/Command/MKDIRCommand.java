@@ -45,6 +45,8 @@ public class MKDIRCommand extends Command{
     private void createDirectory(Directory currentDirectory){
         FileSystemItem newDirectory = new FileSystemItem();
         newDirectory.setName(directoryName);
+        newDirectory.setParentDirectory(currentDirectory);
+        newDirectory.setPath(currentDirectory.getPath());
 
     }
 
