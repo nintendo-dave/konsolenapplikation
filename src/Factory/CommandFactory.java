@@ -7,7 +7,7 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 
 public class CommandFactory {
-    static public Dictionary<String, Command> getCommands(){
+    public static Dictionary<String, Command> getCommands(){
         Hashtable<String, Command> allCommands = new Hashtable<String, Command>();
         allCommands.put("exit", new EXITCommand());
         allCommands.put("mkdir", new MKDIRCommand());
@@ -22,5 +22,9 @@ public class CommandFactory {
         allCommands.put("more", new MORECommand());
         allCommands.put("type", new TYPECommand());
         return allCommands;
+    }
+
+    public static Command getCommand(Command command){
+        return new ExitCommand();
     }
 }
