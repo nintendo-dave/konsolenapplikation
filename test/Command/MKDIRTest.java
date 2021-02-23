@@ -4,7 +4,6 @@ import Configurator.Configurator;
 import Console.Console;
 import Filesystem.Directory;
 import Filesystem.Drive;
-import Writer.ConsoleOutputWriterTest;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -44,7 +43,7 @@ public class MKDIRTest {
 	@Test
 	public void testDirectoryRedundancy(){
 		prepEnvironment();
-
+		System.out.println("Environment set up");
 		//create test-directory
 		Directory dir2 = new Directory("bobs_files", "C:\\sys\\bob");
 

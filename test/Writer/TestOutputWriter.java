@@ -1,22 +1,21 @@
 package Writer;
 
-import org.junit.Test;
-
-public class ConsoleOutputWriterTest implements IOutputWriter{
-
+public class TestOutputWriter implements IOutputWriter{
 	//--- Variables
 	private String output;
 
-	@Test
+	//--- Methods
+	@Override
 	public void print(String output) {
 		this.output = output;
 	}
 
-	@Test
+	@Override
 	public void printLine(String output) {
 		this.output = output;
 	}
 
+	//--- Getter and Setter
 	public String getOutput(){
 		return output;
 	}
