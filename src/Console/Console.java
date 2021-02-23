@@ -17,9 +17,11 @@ public class Console {
         this.configurator = (Configurator) configuator;
     }
     public void start(){
-        String userInput = new Scanner(System.in).nextLine();
-        CommandInvoker commandInvoker = new CommandInvoker(new ConsoleOutputWriter());
-        commandInvoker.executeCommand(userInput);
+        while (true) {
+            String userInput = new Scanner(System.in).nextLine();
+            CommandInvoker commandInvoker = new CommandInvoker(new ConsoleOutputWriter());
+            commandInvoker.executeCommand(userInput);
+        }
     }
 
     public static Drive getDrive(){
