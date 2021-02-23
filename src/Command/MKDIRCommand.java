@@ -2,9 +2,7 @@ package Command;
 
 import Filesystem.Directory;
 import Filesystem.Drive;
-import Filesystem.File;
 import Filesystem.FileSystemItem;
-import Invoker.CommandInvoker;
 import Writer.IOutputWriter;
 
 //Authors: Luca v.S., David B.
@@ -23,16 +21,12 @@ public class MKDIRCommand extends Command{
         directoryName = parameters.get(0);
         this.outputWriter = outputWriter;
 
-        if(alreadyExists(directoryName ,drive.getCurrentDirectory())){
+        //if directory name isn't already taken, create the directory
+        if(alreadyExists(directoryName, drive.getCurrentDirectory())){
             outputWriter.printLine("Ein Unterverzeichnis oder eine Datei mit dem Namen " +
                     "\""+directoryName+"\" existiert bereits.");
         } else{
-            //TODO: CommandInvoker muss später durch den echten ersetzt werden
-            CommandInvoker temp_commandInvoker = new CommandInvoker(outputWriter);
-            //TODO: Drive muss von CommandInvoker geholt werden
-            Drive temp_Drive = new Drive();
-
-            createDirectory(temp_Drive.getCurrentDirectory());
+            createDirectory(drive.getCurrentDirectory());
             outputWriter.printLine("");
         }
 
@@ -43,7 +37,6 @@ public class MKDIRCommand extends Command{
         newDirectory.setName(directoryName);
         newDirectory.setParentDirectory(currentDirectory);
         newDirectory.setPath(currentDirectory.getPath());
-
     }
 
     private boolean alreadyExists(String directoryName, Directory directory){

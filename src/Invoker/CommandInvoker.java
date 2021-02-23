@@ -11,13 +11,17 @@ import java.util.Dictionary;
 import java.util.List;
 
 public class CommandInvoker {
+    //--- Variables
     List<String> commands;
     ConsoleOutputWriter outputWriter;
+
+    //--- Constructor
     public CommandInvoker(IOutputWriter outputWriter) {
         this.outputWriter = (ConsoleOutputWriter) outputWriter;
         commands = CommandFactory.getCommands();
     }
 
+    //--- Methods
     public void executeCommand(String userInput){
         String command = CommandParser.parseCommand(userInput);
         Command cmd = CommandFactory.getCommand(command);

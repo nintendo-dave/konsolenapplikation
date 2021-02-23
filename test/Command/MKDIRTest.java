@@ -1,15 +1,13 @@
 package Command;
 
-import Configurator.Configurator;
-import Console.Console;
-import Factory.CommandFactory;
 import Filesystem.Directory;
 import Filesystem.Drive;
 import Invoker.CommandInvoker;
 import Writer.TestOutputWriter;
+import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
+import static org.junit.Assert.*;
 
 //Authors: Luca v.S., David B.
 public class MKDIRTest {
@@ -20,8 +18,9 @@ public class MKDIRTest {
 	Directory rootDir;
 	Directory dir;
 
-	//--- Test Methods
-	private void prepEnvironment(){
+	//--- Test Setup
+	@Before
+	public void setupEnvironment(){
 		//Create OutputWriter
 		writer = new TestOutputWriter();
 
@@ -37,20 +36,21 @@ public class MKDIRTest {
 		//finish initializing drive
 		drive.setRootDirectory(rootDir);
 		drive.setCurrentDirectory(dir);
-	}
 
-	@Test
-	public void testDirectoryRedundancy(){
-		prepEnvironment();
 		//create test-directory
 		Directory dir2 = new Directory("bobs_files", "C:\\sys\\bob");
 
-		//create command
-		Command cmd = CommandFactory.getCommand("ver");
-		cmd.execute(writer, drive);
-		ArrayList<String> params = new ArrayList<>();
-		params.add("f");
-		cmd.setParameters(params);
+	}
+
+	//--- Test Methods
+	@Test
+	public void testDirectoryRedundancy(){
+
+		//create and execute command
+		CommandInvoker commandInvoker = new CommandInvoker(writer);
+		commandInvoker.executeCommand("mkdir f");
+
+		assertEquals("", writer.getOutput());
 
 	}
 }
