@@ -9,6 +9,7 @@ public class VERCommandTest {
 
 	@Test
 	public void execute() {
-		Command testVerCommand = new CommandFactory.getCommand("ver");
+		Command testVerCommand = CommandFactory.getCommand("ver");
+
 	}
 }
