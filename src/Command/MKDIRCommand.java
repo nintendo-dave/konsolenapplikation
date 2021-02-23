@@ -19,7 +19,7 @@ public class MKDIRCommand extends Command{
 
     //--- Methods
     @Override
-    public void execute(IOutputWriter outputWriter,Drive drive) {
+    public void execute(IOutputWriter outputWriter, Drive drive) {
         directoryName = parameters.get(0);
         this.outputWriter = outputWriter;
 

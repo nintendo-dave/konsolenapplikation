@@ -2,8 +2,10 @@ package Command;
 
 import Configurator.Configurator;
 import Console.Console;
+import Factory.CommandFactory;
 import Filesystem.Directory;
 import Filesystem.Drive;
+import Invoker.CommandInvoker;
 import Writer.TestOutputWriter;
 import org.junit.Test;
 
@@ -35,21 +37,16 @@ public class MKDIRTest {
 		//finish initializing drive
 		drive.setRootDirectory(rootDir);
 		drive.setCurrentDirectory(dir);
-
-		//create Console
-		Console console = new Console(new Configurator());
-		console.start();
 	}
 
 	@Test
 	public void testDirectoryRedundancy(){
 		prepEnvironment();
-		System.out.println("Environment set up");
 		//create test-directory
 		Directory dir2 = new Directory("bobs_files", "C:\\sys\\bob");
 
 		//create command
-		MKDIRCommand cmd = new MKDIRCommand();
+		Command cmd = CommandFactory.getCommand("ver");
 		cmd.execute(writer, drive);
 		ArrayList<String> params = new ArrayList<>();
 		params.add("f");
