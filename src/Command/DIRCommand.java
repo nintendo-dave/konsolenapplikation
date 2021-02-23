@@ -16,7 +16,7 @@ public class DIRCommand extends Command {
         } else {
             Directory directory = drive.getCurrentDirectory();
             for (int i = 0; i <= directory.getFileSystemLists().size(); i++) {
-                outputWriter.printLine(directory.getFileSystemLists().get(i));
+                outputWriter.printLine(directory.getFileSystemLists().get(i).toString());
         }
         }
     }
