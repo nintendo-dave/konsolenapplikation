@@ -4,6 +4,7 @@ import Configurator.Configurator;
 import Console.Console;
 import Filesystem.Directory;
 import Filesystem.Drive;
+import Writer.TestOutputWriter;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 public class MKDIRTest {
 
 	//--- Variables
-	ConsoleOutputWriterTest writer;
+	TestOutputWriter writer;
 	Drive drive;
 	Directory rootDir;
 	Directory dir;
@@ -20,7 +21,7 @@ public class MKDIRTest {
 	//--- Test Methods
 	private void prepEnvironment(){
 		//Create OutputWriter
-		writer = new ConsoleOutputWriterTest();
+		writer = new TestOutputWriter();
 
 		//start initializing drive
 		drive = new Drive("TESTDRIVE", "C");

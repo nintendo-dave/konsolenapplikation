@@ -15,14 +15,12 @@ public class MKDIRCommand extends Command{
     IOutputWriter outputWriter;
 
     //--- Constructor
-    public MKDIRCommand(){
-        directoryName = parameters.get(0);
-    }
+    public MKDIRCommand(){ }
 
     //--- Methods
     @Override
     public void execute(IOutputWriter outputWriter,Drive drive) {
-
+        directoryName = parameters.get(0);
         this.outputWriter = outputWriter;
 
         if(alreadyExists(directoryName ,drive.getCurrentDirectory())){
