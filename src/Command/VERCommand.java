@@ -5,7 +5,7 @@ import Writer.IOutputWriter;
 
 public class VERCommand extends Command {
     //Variables
-    String version = "Alpha 0.1";
+    String version = "Alpha 1.0";
 
     @Override
     public void execute(IOutputWriter outputWriter, Drive drive) {
