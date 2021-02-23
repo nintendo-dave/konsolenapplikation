@@ -1,27 +1,24 @@
 package Command;
 
-import Configurator.Configurator;
-import Console.Console;
 import Factory.CommandFactory;
 import Filesystem.Directory;
 import Filesystem.Drive;
-import Invoker.CommandInvoker;
 import Writer.TestOutputWriter;
 import org.junit.Test;
 
-import java.util.ArrayList;
+import static org.junit.Assert.*;
 
-//Authors: Luca v.S., David B.
-public class MKDIRTest {
+public class VERCommandTest {
 
-	//--- Variables
-	TestOutputWriter writer;
-	Drive drive;
-	Directory rootDir;
-	Directory dir;
+	@Test
+	public void execute() {
 
-	//--- Test Methods
-	private void prepEnvironment(){
+		//--- Variables
+		TestOutputWriter writer;
+		Drive drive;
+		Directory rootDir;
+		Directory dir;
+
 		//Create OutputWriter
 		writer = new TestOutputWriter();
 
@@ -37,20 +34,15 @@ public class MKDIRTest {
 		//finish initializing drive
 		drive.setRootDirectory(rootDir);
 		drive.setCurrentDirectory(dir);
-	}
 
-	@Test
-	public void testDirectoryRedundancy(){
-		prepEnvironment();
-		//create test-directory
-		Directory dir2 = new Directory("bobs_files", "C:\\sys\\bob");
+		//create TestOutputWriter
+		TestOutputWriter testOutputWriter = new TestOutputWriter();
 
-		//create command
+		//create and execute command
 		Command cmd = CommandFactory.getCommand("ver");
-		cmd.execute(writer, drive);
-		ArrayList<String> params = new ArrayList<>();
-		params.add("f");
-		cmd.setParameters(params);
+		cmd.execute(testOutputWriter, drive);
 
+		//validate test results
+		assertEquals("Alpha 0.1", testOutputWriter.getOutput());
 	}
 }
