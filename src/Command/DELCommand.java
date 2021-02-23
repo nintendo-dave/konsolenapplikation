@@ -11,13 +11,13 @@ public class DELCommand extends Command {
     boolean delStatus;
 
     public DELCommand() {
-        fileName = parameters.get(0);
-        delStatus = false;
     }
 
     @Override
     public void execute(IOutputWriter outputWriter, Drive drive) {
         ArrayList<FileSystemItem> fileSystemItemArrayList = drive.getCurrentDirectory().getFileSystemLists();
+        fileName = parameters.get(0);
+        delStatus = false;
 
         for (int i = 0; i < fileSystemItemArrayList.size(); i++) {
             if (fileSystemItemArrayList.get(i).getName().equals(fileName)) {
