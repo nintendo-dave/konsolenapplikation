@@ -46,16 +46,18 @@ public class MKDIRTest {
 
 	//--- Test Methods
 	@Test
-	public void testDirectoryRedundancy(){
-		//create and execute command
+	public void testDirectoryAlreadyExists(){
+		//Arrange
 		CommandInvoker commandInvoker = new CommandInvoker(writer);
-		commandInvoker.executeCommand("mkdir ");
 
-		//validate
+		//Act
+		commandInvoker.executeCommand("mkdir bob");
+
+		//Assert
 		assertEquals("Ein Unterverzeichnis oder eine Datei mit dem Namen "+
 				"\"bob\" existiert bereits.", writer.getOutput());
 
-		//print output
+		//for additional debugging
 		System.out.println("Actual: \n" + writer.getOutput());
 
 	}

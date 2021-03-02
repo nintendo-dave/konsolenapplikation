@@ -40,15 +40,12 @@ public class MKDIRCommand extends Command{
     }
 
     private boolean alreadyExists(String directoryName, Directory directory){
-        //TODO: Loop through folder and return true, if folder already exists
         for(FileSystemItem item : directory.getFileSystemLists()){
-            System.out.println(item.getClass().getName());
-            System.out.println(item.getName());
             if(item.getName().equals(directoryName) && item instanceof Directory){
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
 }
