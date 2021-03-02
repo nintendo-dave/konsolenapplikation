@@ -11,22 +11,31 @@ public class DIRCommand extends Command {
 
     @Override
     public void execute(IOutputWriter outputWriter, Drive drive) {
-        if (!alreadyExists(directoryName, drive.getCurrentDirectory())) {
-            outputWriter.printLine("Dieses Verzeichnis Existiert nicht");
-        } else {
+        directoryName = parameters.get(0);
+        if (directoryName == null) {
             Directory directory = drive.getCurrentDirectory();
-            for (int i = 0; i <= directory.getFileSystemLists().size(); i++) {
-                outputWriter.printLine(directory.getFileSystemLists().get(i).toString());
-        }
+            outputWriter.printLine(directory.getFileSystemLists().toString());
+        } else {
+            if (!alreadyExists(directoryName, drive.getCurrentDirectory())) {
+                outputWriter.printLine("Dieses Verzeichnis Existiert nicht");
+            } else {
+                outputWriter.printLine("test");
+            }
         }
     }
 
+
     // check if directory exist
-    private boolean alreadyExists(String directoryName, Directory directory){
+    private boolean alreadyExists(String directoryName, Directory directory) {
         //TODO: Loop through folder and return true, if folder already exists
-        for(FileSystemItem item : directory.getFileSystemLists()){
-            if(item.getName().equals(directoryName) && item.getClass().getName().equals("Directory")){
-                return false;
+        // True if directory is empty cause then it's the current directory
+        if (directoryName.isEmpty()) {
+            return true;
+        } else {
+            for (FileSystemItem item : directory.getFileSystemLists()) {
+                if (item.getName().equals(directoryName) && item.getClass().getName().equals("Directory")) {
+                    return false;
+                }
             }
         }
         return true;
