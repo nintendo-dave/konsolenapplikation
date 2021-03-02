@@ -23,7 +23,7 @@ public class MKDIRCommand extends Command{
 
         //if directory name isn't already being used, then create the directory
         if(alreadyExists(directoryName, drive.getCurrentDirectory())){
-            outputWriter.printLine("Ein Unterverzeichnis oder eine Datei mit dem Namen " +
+            outputWriter.printLine("Ein Unterverzeichnis mit dem Namen " +
                     "\""+directoryName+"\" existiert bereits.");
         } else{
             createDirectory(drive.getCurrentDirectory());
@@ -33,7 +33,7 @@ public class MKDIRCommand extends Command{
     }
 
     private void createDirectory(Directory currentDirectory){
-        FileSystemItem newDirectory = new FileSystemItem();
+        FileSystemItem newDirectory = new Directory();
         newDirectory.setName(directoryName);
         newDirectory.setParentDirectory(currentDirectory);
         newDirectory.setPath(currentDirectory.getPath());

@@ -3,6 +3,7 @@ package Command;
 import Console.Console;
 import Filesystem.Directory;
 import Filesystem.Drive;
+import Filesystem.FileSystemItem;
 import Invoker.CommandInvoker;
 import TestWriter.TestOutputWriter;
 import org.junit.Before;
@@ -54,11 +55,32 @@ public class MKDIRTest {
 		commandInvoker.executeCommand("mkdir bob");
 
 		//Assert
-		assertEquals("Ein Unterverzeichnis oder eine Datei mit dem Namen "+
+		assertEquals("Ein Unterverzeichnis mit dem Namen "+
 				"\"bob\" existiert bereits.", writer.getOutput());
 
 		//for additional debugging
 		System.out.println("Actual: \n" + writer.getOutput());
 
+	}
+
+	@Test
+	public void testCreateDirectory(){
+		//Arrange
+		CommandInvoker commandInvoker = new CommandInvoker(writer);
+
+		//Act
+		commandInvoker.executeCommand("mkdir newDirectory");
+
+		//Assert
+		//loop through rootDir and check for newly created directory 'newDirectory'
+		boolean exists = false;
+		for(FileSystemItem item : drive.getCurrentDirectory().getFileSystemLists()){
+			if (item instanceof Directory && item.getName().equals("newDirectory")) {
+				exists = true;
+				break;
+			}
+		}
+
+		assertTrue(exists);
 	}
 }
