@@ -33,10 +33,14 @@ public class MKDIRCommand extends Command{
     }
 
     private void createDirectory(Directory currentDirectory){
+        //create directory
         FileSystemItem newDirectory = new Directory();
+        //set directory attributes
         newDirectory.setName(directoryName);
+        newDirectory.setPath(currentDirectory.getPath() + currentDirectory.getName() + "\\");
         newDirectory.setParentDirectory(currentDirectory);
-        newDirectory.setPath(currentDirectory.getPath());
+        //add to parent directory's item list
+        currentDirectory.getFileSystemLists().add(newDirectory);
     }
 
     private boolean alreadyExists(String directoryName, Directory directory){
