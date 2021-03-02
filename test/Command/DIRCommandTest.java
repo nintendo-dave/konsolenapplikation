@@ -2,12 +2,9 @@ package Command;
 
 import Filesystem.Drive;
 import Invoker.CommandInvoker;
-import Writer.ConsoleOutputWriter;
-import Writer.IOutputWriter;
-import Writer.TestOutputWriter;
+import TestWriter.IOutputWriter;
+import TestWriter.TestOutputWriter;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class DIRCommandTest {
 
@@ -22,6 +19,6 @@ public class DIRCommandTest {
     public void testDirCommand() throws Exception {
 
 
-        assertEquals(excpected, );
+        //assertEquals(excpected, );
     }
 }

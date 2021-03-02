@@ -1,4 +1,4 @@
-package Writer;
+package TestWriter;
 
 public class ConsoleOutputWriter implements IOutputWriter {
     @Override

@@ -4,10 +4,8 @@ import Configurator.Configurator;
 import Configurator.IConfigurator;
 import Filesystem.Drive;
 import Invoker.CommandInvoker;
-import Writer.ConsoleOutputWriter;
+import TestWriter.ConsoleOutputWriter;
 
-import java.lang.reflect.Array;
-import java.sql.DriverManager;
 import java.util.Scanner;
 
 public class Console {

@@ -1,7 +1,7 @@
 package Command;
 
 import Filesystem.Drive;
-import Writer.IOutputWriter;
+import TestWriter.IOutputWriter;
 
 //Authors: Luca v.S., David B.
 public class SETCOLORCommand extends Command{

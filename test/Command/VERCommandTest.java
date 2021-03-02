@@ -3,7 +3,7 @@ package Command;
 import Factory.CommandFactory;
 import Filesystem.Directory;
 import Filesystem.Drive;
-import Writer.TestOutputWriter;
+import TestWriter.TestOutputWriter;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

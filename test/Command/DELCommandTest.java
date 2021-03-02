@@ -2,10 +2,9 @@ package Command;
 
 import Filesystem.Directory;
 import Filesystem.Drive;
-import Writer.TestOutputWriter;
+import TestWriter.TestOutputWriter;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 public class DELCommandTest {
 
     @Test

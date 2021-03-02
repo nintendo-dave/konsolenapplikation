@@ -4,7 +4,7 @@ import Console.Console;
 import Filesystem.Directory;
 import Filesystem.Drive;
 import Invoker.CommandInvoker;
-import Writer.TestOutputWriter;
+import TestWriter.TestOutputWriter;
 import org.junit.Before;
 import org.junit.Test;
 

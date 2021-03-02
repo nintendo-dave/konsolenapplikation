@@ -4,10 +4,8 @@ import Command.Command;
 import Console.Console;
 import Factory.CommandFactory;
 import Parser.CommandParser;
-import Writer.ConsoleOutputWriter;
-import Writer.IOutputWriter;
+import TestWriter.IOutputWriter;
 
-import java.util.Dictionary;
 import java.util.List;
 
 public class CommandInvoker {

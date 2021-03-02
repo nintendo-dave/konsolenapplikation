@@ -1,4 +1,4 @@
-package Writer;
+package TestWriter;
 
 public class TestOutputWriter implements IOutputWriter{
 	//--- Variables

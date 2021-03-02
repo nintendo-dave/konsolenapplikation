@@ -1,7 +1,7 @@
 package Command;
 
 import Filesystem.Drive;
-import Writer.IOutputWriter;
+import TestWriter.IOutputWriter;
 
 public class MOVECommand extends Command {
 

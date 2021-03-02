@@ -3,7 +3,7 @@ package Command;
 import Filesystem.Directory;
 import Filesystem.Drive;
 import Filesystem.FileSystemItem;
-import Writer.IOutputWriter;
+import TestWriter.IOutputWriter;
 
 public class DIRCommand extends Command {
 

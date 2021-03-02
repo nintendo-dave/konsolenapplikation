@@ -3,7 +3,7 @@ package Command;
 import Filesystem.Directory;
 import Filesystem.Drive;
 import Filesystem.FileSystemItem;
-import Writer.IOutputWriter;
+import TestWriter.IOutputWriter;
 
 //Authors: Luca v.S., David B.
 public class MKDIRCommand extends Command{
