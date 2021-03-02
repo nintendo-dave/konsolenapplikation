@@ -15,10 +15,13 @@ public class DIRCommand extends Command {
         if (directoryName == null) {
             Directory directory = drive.getCurrentDirectory();
             outputWriter.printLine(directory.getFileSystemLists().toString());
-        } else if (!alreadyExists(directoryName, drive.getCurrentDirectory())) {
-            outputWriter.printLine("Dieses Verzeichnis Existiert nicht");
+        } else {
+            if (!alreadyExists(directoryName, drive.getCurrentDirectory())) {
+                outputWriter.printLine("Dieses Verzeichnis Existiert nicht");
+            } else {
+                outputWriter.printLine("test");
+            }
         }
-        outputWriter.printLine("test");
     }
 
 
