@@ -38,7 +38,7 @@ public class MKDIRTest {
 		//finish initializing drive
 		drive.setRootDirectory(rootDir);
 		drive.setCurrentDirectory(rootDir);
-		Console.setDrive(drive);
+		//Console.setDrive(drive);
 
 		//create test-directory
 		Directory dir2 = new Directory("bobs_files", "C:\\sys\\bob");

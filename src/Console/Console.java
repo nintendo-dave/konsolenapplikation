@@ -2,24 +2,25 @@ package Console;
 
 import Configurator.Configurator;
 import Configurator.IConfigurator;
+import Filesystem.Directory;
 import Filesystem.Drive;
 import Invoker.CommandInvoker;
 import TestWriter.ConsoleOutputWriter;
 
+import java.lang.reflect.Array;
+import java.sql.DriverManager;
 import java.util.Scanner;
 
 public class Console {
-    //--- Variables
     Configurator configurator;
-    private static Drive drive;
+    static Drive drive = new Drive();
 
-    //--- Constructor
-    public Console(IConfigurator configuator){
+    public Console(IConfigurator configuator) {
         this.configurator = (Configurator) configuator;
     }
 
-    //--- Methods
-    public void start(){
+    public void start() {
+        drive.setRootDirectory(new Directory("root", "C:"));
         while (true) {
             String userInput = new Scanner(System.in).nextLine();
             CommandInvoker commandInvoker = new CommandInvoker(new ConsoleOutputWriter());
@@ -27,13 +28,7 @@ public class Console {
         }
     }
 
-    //--- Getter and Setter
-    public static void setDrive(Drive drive){
-        Console.drive = drive;
-    }
-
-    public static Drive getDrive(){
+    public static Drive getDrive() {
         return drive;
     }
-
 }
