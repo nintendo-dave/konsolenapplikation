@@ -1,13 +1,14 @@
 package Filesystem;
 import java.util.List;
 public class Drive {
-    String name;
-    String label;
-    int size;
-    Directory rootDirectory = new Directory("root", "C:");
-    Directory currentDirectory = new Directory("root", "C:");
-    String prompt;
-    List<FileSystemItem> fileSystemItems;
+    //--- Variables
+    private String name;
+    private String label;
+    private int size;
+    private Directory rootDirectory;
+    private Directory currentDirectory;
+    private String prompt;
+    private List<FileSystemItem> fileSystemItems;
 
     //--- Constructors
     public Drive(){}
@@ -25,6 +26,7 @@ public class Drive {
         return currentDirectory;
     }
     public void setCurrentDirectory(Directory directory){
+        this.currentDirectory = directory;
     }
     public void setRootDirectory(Directory rootDirectory) {
         this.rootDirectory = rootDirectory;

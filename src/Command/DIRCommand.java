@@ -11,7 +11,20 @@ public class DIRCommand extends Command {
 
     @Override
     public void execute(IOutputWriter outputWriter, Drive drive) {
-        directoryName = parameters.get(0);
+
+        //check if any params given
+        if(parameters.size() == 0){
+
+            //check if directory has child-items
+            if(drive.getCurrentDirectory().getFileSystemLists().size() > 0){
+                //print name of each child-item
+                for(FileSystemItem item : drive.getCurrentDirectory().getFileSystemLists()){
+                    System.out.println(item.getName());
+                }
+            }
+        }
+
+        /*directoryName = parameters.get(0);
         if (directoryName == null) {
             Directory directory = drive.getCurrentDirectory();
             outputWriter.printLine(directory.getFileSystemLists().toString());
@@ -21,7 +34,7 @@ public class DIRCommand extends Command {
             } else {
                 outputWriter.printLine("test");
             }
-        }
+        }*/
     }
 
 

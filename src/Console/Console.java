@@ -24,7 +24,7 @@ public class Console {
         setupDrive();
         while (true) {
             //Prompt
-            System.out.print(drive.getCurrentDirectory().getPath() + drive.getCurrentDirectory().getName() + ">");
+            System.out.print(drive.getCurrentDirectory().getPath() + drive.getCurrentDirectory().getName() + "> ");
 
             //Read input
             String userInput = new Scanner(System.in).nextLine();
@@ -34,8 +34,7 @@ public class Console {
     }
 
     private void setupDrive(){
-
-        drive = new Drive("MAINDRIVE", "C");
+        Drive temp_drive = new Drive("MAINDRIVE", "C");
 
         //create root directory of drive
         Directory rootDir = new Directory("\\", "C:");
@@ -44,13 +43,12 @@ public class Console {
         dir.setPath(rootDir.getPath());
         rootDir.getFileSystemLists().add(dir);
 
-        //finish initializing drive
-        drive.setRootDirectory(rootDir);
-        drive.setCurrentDirectory(rootDir);
-        Console.setDrive(drive);
 
-        //create test-directory
-        Directory dir2 = new Directory("bobs_files", "C:\\sys\\bob");
+        //finish initializing drive
+        dir.setParentDirectory(rootDir);
+        temp_drive.setCurrentDirectory(rootDir);
+        temp_drive.setRootDirectory(rootDir);
+        Console.setDrive(temp_drive);
     }
 
     //--- Getter and Setter
