@@ -29,10 +29,10 @@ public class DIRCommand extends Command {
             Directory directory = drive.getCurrentDirectory();
             outputWriter.printLine(directory.getFileSystemLists().toString());
         } else {
-            if (!alreadyExists(directoryName, drive.getCurrentDirectory())) {
+            if (alreadyExists(directoryName, drive.getCurrentDirectory())) {
                 outputWriter.printLine("Dieses Verzeichnis Existiert nicht");
             } else {
-                outputWriter.printLine("test");
+                outputWriter.printLine(drive.getCurrentDirectory().getFileSystemLists().toString());
             }
         }*/
     }
