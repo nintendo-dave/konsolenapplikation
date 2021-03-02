@@ -12,13 +12,16 @@ public class DIRCommand extends Command {
     @Override
     public void execute(IOutputWriter outputWriter, Drive drive) {
         directoryName = parameters.get(0);
-        if (directoryName.isEmpty()) {
+        if (directoryName == null) {
             Directory directory = drive.getCurrentDirectory();
             outputWriter.printLine(directory.getFileSystemLists().toString());
-        } else if (!alreadyExists(directoryName, drive.getCurrentDirectory())) {
-            outputWriter.printLine("Dieses Verzeichnis Existiert nicht");
+        } else {
+            if (alreadyExists(directoryName, drive.getCurrentDirectory())) {
+                outputWriter.printLine("Dieses Verzeichnis Existiert nicht");
+            } else {
+                outputWriter.printLine(drive.getCurrentDirectory().getFileSystemLists().toString());
+            }
         }
-        outputWriter.printLine("test");
     }
 
 
