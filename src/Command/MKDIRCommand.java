@@ -27,7 +27,6 @@ public class MKDIRCommand extends Command{
                     "\""+directoryName+"\" existiert bereits.");
         } else{
             createDirectory(drive.getCurrentDirectory());
-            outputWriter.printLine("");
         }
 
     }
