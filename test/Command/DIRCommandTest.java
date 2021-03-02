@@ -26,7 +26,7 @@ public class DIRCommandTest {
         //Create OutputWriter
         writer = new TestOutputWriter();
 
-        //start initializing drive
+        //start initializing dr§ive
         drive = new Drive("TESTDRIVE", "C");
 
         //create root directory of drive
