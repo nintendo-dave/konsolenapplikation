@@ -27,7 +27,7 @@ public class DELCommand extends Command {
             }
         }
         if (!delStatus) {
-            outputWriter.printLine("es wurde kein Elemtent mit dem namen " +fileName+ " gefunden.");
+            outputWriter.printLine("es wurde kein Element mit dem namen " +fileName+ " gefunden.");
         }
     }
 }
