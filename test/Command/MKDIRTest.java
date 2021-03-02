@@ -30,8 +30,8 @@ public class MKDIRTest {
 		drive = new Drive("TESTDRIVE", "C");
 
 		//create root directory of drive
-		rootDir = new Directory("", "C:");
-		//create directory in which is tested
+		rootDir = new Directory("\\", "C:");
+		//create directory in which is being tested
 		dir = new Directory("bob", "C:\\");
 		dir.setPath(rootDir.getPath());
 		rootDir.getFileSystemLists().add(dir);
@@ -40,6 +40,7 @@ public class MKDIRTest {
 		drive.setRootDirectory(rootDir);
 		drive.setCurrentDirectory(rootDir);
 		Console.setDrive(drive);
+		System.out.println(rootDir.getPath());
 
 		//create test-directory
 		Directory dir2 = new Directory("bobs_files", "C:\\sys\\bob");
