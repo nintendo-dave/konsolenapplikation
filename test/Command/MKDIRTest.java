@@ -1,5 +1,6 @@
 package Command;
 
+import Console.Console;
 import Filesystem.Directory;
 import Filesystem.Drive;
 import Invoker.CommandInvoker;
@@ -32,25 +33,30 @@ public class MKDIRTest {
 		//create directory in which is tested
 		dir = new Directory("bob", "C:\\sys");
 		dir.setPath(rootDir.getPath());
+		rootDir.getFileSystemLists().add(dir);
 
 		//finish initializing drive
 		drive.setRootDirectory(rootDir);
-		drive.setCurrentDirectory(dir);
+		drive.setCurrentDirectory(rootDir);
+		Console.setDrive(drive);
 
 		//create test-directory
 		Directory dir2 = new Directory("bobs_files", "C:\\sys\\bob");
-
 	}
 
 	//--- Test Methods
 	@Test
 	public void testDirectoryRedundancy(){
-
 		//create and execute command
 		CommandInvoker commandInvoker = new CommandInvoker(writer);
-		commandInvoker.executeCommand("mkdir f");
+		commandInvoker.executeCommand("mkdir ");
 
-		assertEquals("", writer.getOutput());
+		//validate
+		assertEquals("Ein Unterverzeichnis oder eine Datei mit dem Namen "+
+				"\"bob\" existiert bereits.", writer.getOutput());
+
+		//print output
+		System.out.println("Actual: \n" + writer.getOutput());
 
 	}
 }

@@ -3,7 +3,7 @@ package Filesystem;
 import java.util.ArrayList;
 
 public class Directory extends FileSystemItem {
-    ArrayList<FileSystemItem> fileSystemLists;
+    ArrayList<FileSystemItem> fileSystemLists = new ArrayList<>();
 
     public Directory(String name, String path) {
         super(name, path);

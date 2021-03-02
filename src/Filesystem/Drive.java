@@ -3,13 +3,13 @@ package Filesystem;
 import java.util.List;
 
 public class Drive {
-    String name;
-    String label;
-    int size;
-    Directory rootDirectory;
-    Directory currentDirectory;
-    String prompt;
-    List<FileSystemItem> fileSystemItems;
+    private String name;
+    private String label;
+    private int size;
+    private Directory rootDirectory;
+    private Directory currentDirectory;
+    private String prompt;
+    private List<FileSystemItem> fileSystemItems;
 
 
     //--- Constructors
@@ -19,8 +19,8 @@ public class Drive {
         this.name = name;
         this.label = label;
     }
-    //--- Methods
 
+    //--- Methods
     private void restore(){
 
     }
@@ -34,8 +34,8 @@ public class Drive {
         return currentDirectory;
     }
 
-    public void setCurrentDirectory(Directory directory){
-
+    public void setCurrentDirectory(Directory currentDirectory){
+        this.currentDirectory = currentDirectory;
     }
 
     public void setRootDirectory(Directory rootDirectory) {

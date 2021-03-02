@@ -21,7 +21,7 @@ public class MKDIRCommand extends Command{
         directoryName = parameters.get(0);
         this.outputWriter = outputWriter;
 
-        //if directory name isn't already taken, create the directory
+        //if directory name isn't already being used, then create the directory
         if(alreadyExists(directoryName, drive.getCurrentDirectory())){
             outputWriter.printLine("Ein Unterverzeichnis oder eine Datei mit dem Namen " +
                     "\""+directoryName+"\" existiert bereits.");
@@ -42,7 +42,9 @@ public class MKDIRCommand extends Command{
     private boolean alreadyExists(String directoryName, Directory directory){
         //TODO: Loop through folder and return true, if folder already exists
         for(FileSystemItem item : directory.getFileSystemLists()){
-            if(item.getName().equals(directoryName) && item.getClass().getName().equals("Directory")){
+            System.out.println(item.getClass().getName());
+            System.out.println(item.getName());
+            if(item.getName().equals(directoryName) && item instanceof Directory){
                 return false;
             }
         }

@@ -13,11 +13,11 @@ import java.util.List;
 public class CommandInvoker {
     //--- Variables
     List<String> commands;
-    ConsoleOutputWriter outputWriter;
+    IOutputWriter outputWriter;
 
     //--- Constructor
     public CommandInvoker(IOutputWriter outputWriter) {
-        this.outputWriter = (ConsoleOutputWriter) outputWriter;
+        this.outputWriter =  outputWriter;
         commands = CommandFactory.getCommands();
     }
 
@@ -26,7 +26,7 @@ public class CommandInvoker {
         String command = CommandParser.parseCommand(userInput);
         Command cmd = CommandFactory.getCommand(command);
         cmd.setParameters(CommandParser.parseCommandParameters(userInput));
-        cmd.execute(new ConsoleOutputWriter(), Console.getDrive());
+        cmd.execute(outputWriter, Console.getDrive());
     }
 
     public void addCommand(){
