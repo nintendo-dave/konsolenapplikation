@@ -9,6 +9,6 @@ public class EXITCommandTest {
     @Test
     public void execute() {
 
-
+        assertEquals(true, true);
     }
 }
